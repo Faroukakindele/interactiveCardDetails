@@ -1,0 +1,241 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: 62.5%;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrongFormat {
+  color: Red;
+  font-weight: 200;
+  font-size: 0.8rem;
+  visibility: hidden;
+}
+
+header {
+  flex: 1;
+  background-image: url("./img/left.svg");
+  min-height: 25rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+header .card {
+  padding: 1rem 0;
+  height: 15rem;
+  position: absolute;
+  width: 25rem;
+  border-radius: 0.6rem;
+}
+header .card__back {
+  background: linear-gradient(169deg, #FFF 5%, #D2D3D9 91.69%);
+  right: 5%;
+  top: 10%;
+  z-index: 1;
+}
+header .card__back .stripe {
+  background: #2F2F2F;
+  height: 3rem;
+  margin-bottom: 2rem;
+}
+header .card__back .cvv {
+  text-align: end;
+  background: rgb(173, 181, 190);
+  margin: 1rem 2rem;
+  padding: 1rem 0.5rem;
+  color: white;
+}
+header .card__back .img__container {
+  text-align: center;
+}
+header .card__front {
+  z-index: 4;
+  border-radius: 10px;
+  background: linear-gradient(320deg, #6348FE 4.74%, #FF834A 10%, #610595 88.83%);
+  bottom: -10%;
+  right: auto;
+  padding: 1rem;
+  margin-left: 2rem;
+}
+header .card__front .heading {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+header .card__front .heading .circle-1 {
+  height: 3rem;
+  width: 3rem;
+  background-color: white;
+  border-radius: 50%;
+}
+header .card__front .heading .circle-2 {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+header .card__front .number {
+  font-size: 2.2rem;
+  color: white;
+  margin-top: 3rem;
+}
+header .card__front .owner {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 25rem;
+  padding: 5rem 0;
+  flex: 0 0 60%;
+}
+main .form label {
+  display: block;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+  margin-bottom: 0.3rem;
+  letter-spacing: 2px;
+}
+main .form input {
+  font-family: "Space Grotesk", sans-serif;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding: 1rem;
+}
+main .form input:focus {
+  outline: none;
+}
+main .form input::-moz-placeholder {
+  color: grey;
+  font-size: 1rem;
+}
+main .form input::placeholder {
+  color: grey;
+  font-size: 1rem;
+}
+main .form__name, main .form__number {
+  margin-bottom: 1rem;
+}
+main .form .spawn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+}
+main .form__details:first-child {
+  gap: 1rem;
+  flex: 0 0 15%;
+}
+main .form__details:last-child {
+  flex: 1;
+  margin-left: 2rem;
+}
+main .confirm:link,
+main .confirm:visited {
+  color: white;
+  background: #21092F;
+  padding: 1rem 3rem;
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  display: block;
+  text-decoration: none;
+}
+main .success {
+  padding: 3rem 0;
+  text-align: center;
+  max-width: 20rem;
+  display: none;
+}
+main .success .checkbox {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 2rem;
+  background-image: linear-gradient(to left bottom, #6348FE, #610595);
+  position: relative;
+}
+main .success .checkbox .check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .success .status {
+  padding: 2rem 0;
+  padding-bottom: 1rem;
+}
+main .success .status h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #21092F;
+}
+main .success .status p {
+  color: #8F8694;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .container header {
+    flex: 0 0 35%;
+  }
+  .container header .card {
+    transform: scale(0.8);
+  }
+  .container header .card__back {
+    right: -30%;
+    top: 55%;
+  }
+  .container header .card__front {
+    top: 20%;
+    right: -20%;
+  }
+  .container main {
+    min-height: 100%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container header .card {
+    transform: scale(1);
+  }
+  .container header .card__back {
+    right: -25%;
+    top: 55%;
+  }
+  .container header .card__front {
+    top: 20%;
+    right: -10%;
+  }
+}/*# sourceMappingURL=main.css.map */
