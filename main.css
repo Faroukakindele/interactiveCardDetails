@@ -65,7 +65,8 @@ header .card__back .img__container {
 header .card__front {
   z-index: 4;
   border-radius: 10px;
-  background: linear-gradient(320deg, #6348FE 4.74%, #FF834A 10%, #610595 88.83%);
+  padding: 1rem;
+  background: linear-gradient(164deg, #6348FE 4.74%, #610595 88.83%);
   bottom: -10%;
   right: auto;
   padding: 1rem;
@@ -91,7 +92,7 @@ header .card__front .heading .circle-2 {
   margin-left: 0.5rem;
 }
 header .card__front .number {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: white;
   margin-top: 3rem;
 }

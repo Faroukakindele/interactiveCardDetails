@@ -31,6 +31,7 @@ function capitaliseWords(str) {
         return realName
     }
 }
+
 // show error
 function showError(n) {
     wrongFormat[n].style.visibility = "visible"
@@ -66,12 +67,18 @@ function restore() {
     wrongFormat.forEach(
         x => x.style.visibility = "hidden"
     )
+    wrongFormat[0].textContent = "pls check card number"
+
 }
 
 confirmBtn.addEventListener(
     "click", () => {
-        // restore Colors
+        // restore Color
         restore()
+        if (hasAlphabet(InputNumber.value)) [
+            wrongFormat[0].textContent = "Wrong Format Numbers Only"
+        ]
+
         displayProperties()
         checkMonthYear()
         console.log(checkbox)
@@ -88,3 +95,9 @@ confirmBtn.addEventListener(
 
     }
 )
+// show alphabetical error
+function hasAlphabet(str) {
+    let test = /[a-zA-Z]/
+
+    return test.test(str)
+}
