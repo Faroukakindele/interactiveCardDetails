@@ -6,8 +6,10 @@
   box-sizing: border-box;
 }
 
-html {
-  font: 62.5%;
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 70%;
+  }
 }
 
 body {
@@ -43,9 +45,10 @@ header .card {
 }
 header .card__back {
   background: linear-gradient(169deg, #FFF 5%, #D2D3D9 91.69%);
-  right: 5%;
+  right: 0%;
   top: 10%;
   z-index: 1;
+  transform: scale(0.8);
 }
 header .card__back .stripe {
   background: #2F2F2F;
@@ -66,11 +69,12 @@ header .card__front {
   z-index: 4;
   border-radius: 10px;
   padding: 1rem;
+  transform: scale(0.8);
   background: linear-gradient(164deg, #6348FE 4.74%, #610595 88.83%);
   bottom: -10%;
   right: auto;
   padding: 1rem;
-  margin-left: 2rem;
+  margin-left: 0.5rem;
 }
 header .card__front .heading {
   display: flex;
