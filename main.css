@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   html {
     font-size: 70%;
   }
@@ -113,6 +113,11 @@ main {
   max-width: 25rem;
   padding: 5rem 0;
   flex: 0 0 60%;
+}
+@media screen and (max-width: 450px) {
+  main .form {
+    transform: scale(0.9);
+  }
 }
 main .form label {
   display: block;
