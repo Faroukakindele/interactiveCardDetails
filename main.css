@@ -97,8 +97,9 @@ header .card__front .heading .circle-2 {
 }
 header .card__front .number {
   font-size: 2rem;
-  color: white;
+  color: rgba(255, 255, 255, 0.877) !important;
   margin-top: 3rem;
+  text-decoration: none;
 }
 header .card__front .owner {
   margin-top: 2rem;
