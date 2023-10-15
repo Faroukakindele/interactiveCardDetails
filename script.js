@@ -47,7 +47,7 @@ function checkMonthYear() {
     if (!inputYear.value || !inputMonth.value)
         showError(2)
     if (!inputCvc.value) showError(3)
-    if (!nameStr.includes(" ")) showError(0)
+    if (!nameStr.trim().includes(" ")) showError(0)
 
 }
 
