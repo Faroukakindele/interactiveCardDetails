@@ -24,10 +24,7 @@ function capitaliseWords(str) {
         nameOne = nameOne[0].toUpperCase() + nameOne.slice(1)
         let nameTwo = str.split(" ")[1]
         if (nameTwo) nameTwo = nameTwo[0].toUpperCase() + nameTwo.slice(1)
-        else return " "
-
-
-
+        else return nameTwo = " "
         const realName = nameOne + " " + nameTwo
         return realName
     }
@@ -90,7 +87,7 @@ confirmBtn.addEventListener(
             InputNumber.style.borderColor = "red"
         }
         if (checkbox === 16 && InputName.value
-            && inputCvc.value && inputMonth.value && nameStr.includes(" ")) {
+            && inputCvc.value && inputMonth.value && nameStr.trim().includes(" ")) {
             form.style.display = "none"
             success.style.display = "block"
         }
