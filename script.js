@@ -14,19 +14,20 @@ const form = document.querySelector(".form")
 const success = document.querySelector(".success")
 const wrongFormat = document.querySelectorAll(".wrongFormat")
 let checkbox
+let nameStr
 
 // capitalise Name
 function capitaliseWords(str) {
     if (str) {
+        nameStr = str
         let nameOne = str.split(" ")[0]
         nameOne = nameOne[0].toUpperCase() + nameOne.slice(1)
         let nameTwo = str.split(" ")[1]
-        if (nameTwo) {
-            nameTwo = nameTwo[0].toUpperCase() + nameTwo.slice(1)
-        }
-        else {
-            return
-        }
+        if (nameTwo) nameTwo = nameTwo[0].toUpperCase() + nameTwo.slice(1)
+        else return " "
+
+
+
         const realName = nameOne + " " + nameTwo
         return realName
     }
@@ -47,9 +48,9 @@ function formatCardNumber(number) {
 // show month errir
 function checkMonthYear() {
     if (!inputYear.value || !inputMonth.value)
-        showError(1)
-    if (!inputCvc.value) showError(2)
-
+        showError(2)
+    if (!inputCvc.value) showError(3)
+    if (!nameStr.includes(" ")) showError(0)
 
 }
 
@@ -67,7 +68,7 @@ function restore() {
     wrongFormat.forEach(
         x => x.style.visibility = "hidden"
     )
-    wrongFormat[0].textContent = "pls check card number"
+    wrongFormat[1].textContent = "pls check card number"
 
 }
 
@@ -75,19 +76,21 @@ confirmBtn.addEventListener(
     "click", () => {
         // restore Color
         restore()
+        // Check For AlphaBets Errors
         if (hasAlphabet(InputNumber.value)) [
-            wrongFormat[0].textContent = "Wrong Format Numbers Only"
+            wrongFormat[1].textContent = "Wrong Format Numbers Only"
         ]
-
+        // Validate and Displays inputs data
         displayProperties()
         checkMonthYear()
-        console.log(checkbox)
+
+        // Confirm Validation and Show all Error
         if (checkbox < 16) {
-            showError(0)
+            showError(1)
             InputNumber.style.borderColor = "red"
         }
         if (checkbox === 16 && InputName.value
-            && inputCvc.value && inputMonth.value) {
+            && inputCvc.value && inputMonth.value && nameStr.includes(" ")) {
             form.style.display = "none"
             success.style.display = "block"
         }
