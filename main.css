@@ -44,14 +44,14 @@ header .card {
   border-radius: 0.6rem;
 }
 header .card__back {
-  background: linear-gradient(169deg, #FFF 5%, #D2D3D9 91.69%);
+  background: linear-gradient(169deg, #fff 5%, #d2d3d9 91.69%);
   right: 0%;
   top: 10%;
   z-index: 1;
   transform: scale(0.8);
 }
 header .card__back .stripe {
-  background: #2F2F2F;
+  background: #2f2f2f;
   height: 3rem;
   margin-bottom: 2rem;
 }
@@ -70,7 +70,7 @@ header .card__front {
   border-radius: 10px;
   padding: 1rem;
   transform: scale(0.8);
-  background: linear-gradient(164deg, #6348FE 4.74%, #610595 88.83%);
+  background: linear-gradient(164deg, #6348fe 4.74%, #610595 88.83%);
   bottom: -10%;
   right: auto;
   padding: 1rem;
@@ -132,9 +132,12 @@ main .form label {
 main .form input {
   font-family: "Space Grotesk", sans-serif;
   width: 100%;
-  border-radius: 10px;
-  border: 1px solid grey;
   padding: 1rem;
+  border-radius: 8px;
+  border: double 1px transparent;
+  background-image: linear-gradient(white, white), linear-gradient(to right, #6348fe 4.74%, #610595 88.83%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 main .form input:focus {
   outline: none;
@@ -167,7 +170,7 @@ main .form__details:last-child {
 main .confirm:link,
 main .confirm:visited {
   color: white;
-  background: #21092F;
+  background: #21092f;
   padding: 1rem 3rem;
   font-size: 1.3rem;
   display: block;
@@ -187,7 +190,7 @@ main .success .checkbox {
   display: inline-block;
   border-radius: 50%;
   padding: 2rem;
-  background-image: linear-gradient(to left bottom, #6348FE, #610595);
+  background-image: linear-gradient(to left bottom, #6348fe, #610595);
   position: relative;
 }
 main .success .checkbox .check {
@@ -203,10 +206,10 @@ main .success .status {
 main .success .status h1 {
   font-size: 3rem;
   font-weight: 300;
-  color: #21092F;
+  color: #21092f;
 }
 main .success .status p {
-  color: #8F8694;
+  color: #8f8694;
   font-size: 1.4rem;
   font-weight: 400;
 }
